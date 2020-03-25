@@ -41,3 +41,29 @@ def gen_dict(num):
 
 
 print(gen_dict(8))
+
+
+# Question 10
+
+### **Question**
+
+# >***Write a program that accepts a sequence of whitespace separated words as input and prints the words after removing all duplicate words and sorting them alphanumerically.***
+
+# >***Suppose the following input is supplied to the program:***
+# ```
+# hello world and practice makes perfect and hello world again
+# ```
+# >***Then, the output should be:***
+# ```
+# again and hello makes perfect practice world
+# ```
+
+# ----------------------
+
+def remove_and_sort(str):
+    word_list = str.split()
+    filtered_list = list(dict.fromkeys(word_list))
+    filtered_list.sort()
+    return ' '.join(filtered_list)
+
+remove_and_sort('hello world and practice makes perfect and hello world again')
